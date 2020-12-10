@@ -31616,7 +31616,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get("<my-api-endpoint/movies>").then(function (response) {
+      _axios.default.get("<https://myflix89.herokuapp.com/movies>").then(function (response) {
         // Assign the result to the state
         _this2.setState({
           movies: response.data
@@ -31624,9 +31624,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }).catch(function (error) {
         console.log(error);
       });
-    } // This overrides the render() method of the superclass
-    // No need to call super() though, as it does nothing by default
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -31813,7 +31811,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60700" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59539" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
