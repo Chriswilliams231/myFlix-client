@@ -31703,12 +31703,11 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         className: "label"
       }, "Director: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Director.Name)), _react.default.createElement("a", {
-        href: "main-view"
-      }, _react.default.createElement("button", {
+      }, movie.Director.Name)), _react.default.createElement("button", {
         type: "button",
-        className: "back-button"
-      }, "Back")));
+        className: "back-button",
+        onClick: this.props.onClick
+      }, "Back"));
     }
   }]);
 
@@ -31813,7 +31812,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("div", {
         className: "main-view"
       }, selectedMovie ? _react.default.createElement(_movieView.MovieView, {
-        movie: selectedMovie
+        movie: selectedMovie,
+        onClick: function onClick() {
+          return _this3.onMovieClick(null);
+        }
       }) : movies.map(function (movie) {
         return _react.default.createElement(_movieCard.MovieCard, {
           key: movie._id,
@@ -31991,7 +31993,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62162" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
