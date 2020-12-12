@@ -1,9 +1,12 @@
 import React from "react";
 import axios from "axios";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-
+import { LoginView } from "../login-view/login-veiw";
 export class MainView extends React.Component {
   constructor() {
     // Call the superclass constructor
@@ -13,6 +16,7 @@ export class MainView extends React.Component {
     this.state = {
       movies: null,
       selectedMovie: null,
+      user: null,
     };
   }
 
@@ -37,28 +41,40 @@ export class MainView extends React.Component {
     });
   }
 
-  render() {
-    const { movies, selectedMovie } = this.state;
+  onLoggedIn(user) {
+    this.setState({
+      user,
+    });
+  }
 
+  render() {
+    const { movies, selectedMovie, user } = this.state;
+
+    if (!user)
+      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
     // Before the movies have been loaded
     if (!movies) return <div className="main-view" />;
 
     return (
       <div className="main-view">
-        {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onClick={() => this.onMovieClick(null)}
-          />
-        ) : (
-          movies.map((movie) => (
-            <MovieCard
-              key={movie._id}
-              movie={movie}
-              onClick={(movie) => this.onMovieClick(movie)}
-            />
-          ))
-        )}
+        <div className="container">
+          <div className="row">
+            {selectedMovie ? (
+              <MovieView
+                movie={selectedMovie}
+                onClick={() => this.onMovieClick(null)}
+              />
+            ) : (
+              movies.map((movie) => (
+                <MovieCard
+                  key={movie._id}
+                  movie={movie}
+                  onClick={(movie) => this.onMovieClick(movie)}
+                />
+              ))
+            )}
+          </div>
+        </div>
       </div>
     );
   }
