@@ -19,6 +19,7 @@ export class MainView extends React.Component {
       movies: null,
       selectedMovie: null,
       user: null,
+      showRegistration: false,
     };
   }
 
@@ -49,11 +50,24 @@ export class MainView extends React.Component {
     });
   }
 
+  toggleRegistration() {
+    this.setState({ showRegistration: this.state.showRegistration });
+  }
+
   render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, selectedMovie, user, showRegistration } = this.state;
+
+    if (!user && showRegistration) {
+      <RegistrationView />;
+    }
 
     if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+      return (
+        <LoginView
+          onLoggedIn={(user) => this.onLoggedIn(user)}
+          onRegister={this.toggleRegistration}
+        />
+      );
     // Before the movies have been loaded
     if (!movies) return <div className="main-view" />;
 

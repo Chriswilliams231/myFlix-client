@@ -34689,7 +34689,11 @@ function LoginView(props) {
     variant: "secondary",
     type: "button",
     onClick: handleSubmit
-  }, "Login")));
+  }, "Login"), _react.default.createElement(_Button.default, {
+    variant: "secondary",
+    type: "button",
+    onClick: this.props.onRegister
+  }, "Register")));
 }
 
 LoginView.propTypes = {
@@ -34879,7 +34883,8 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       movies: null,
       selectedMovie: null,
-      user: null
+      user: null,
+      showRegistration: false
     };
     return _this;
   } // One of the "hooks" available in a React Component
@@ -34914,6 +34919,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "toggleRegistration",
+    value: function toggleRegistration() {
+      this.setState({
+        showRegistration: this.state.showRegistration
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -34921,11 +34933,18 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           movies = _this$state.movies,
           selectedMovie = _this$state.selectedMovie,
-          user = _this$state.user;
+          user = _this$state.user,
+          showRegistration = _this$state.showRegistration;
+
+      if (!user && showRegistration) {
+        _react.default.createElement(_registrationView.RegistrationView, null);
+      }
+
       if (!user) return _react.default.createElement(_loginVeiw.LoginView, {
         onLoggedIn: function onLoggedIn(user) {
           return _this3.onLoggedIn(user);
-        }
+        },
+        onRegister: this.toggleRegistration
       }); // Before the movies have been loaded
 
       if (!movies) return _react.default.createElement("div", {
@@ -35052,7 +35071,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54560" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57563" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
