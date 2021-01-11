@@ -1,75 +1,94 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import axios from "axios";
+import { Form, Container, Button } from "react-bootstrap";
+import "./registration-view.scss";
 
-export function RegistrationView(props) {
+import { Link } from "react-router-dom";
+
+export function RegistrationView() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
-  const handleRegister = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    // Send a request to the server for authentication then call props.onLoggedIn(username)
-    props.onLoggedIn(username);
+
+    const createdUser = {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday,
+    };
+
+    axios
+      .post("https://myflix89.herokuapp.com/users", createdUser)
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+        alert("User created successfully");
+        window.open("/", "_self");
+      })
+      .catch((e) => {
+        console.log(e.response);
+        alert("Error processing request");
+      });
   };
 
   return (
-    <div className="registration-view">
-      <h2>Welcome to myFlix</h2>
-      <Form>
+    <Container>
+      <br />
+      <br />
+      <Form style={{ width: "32rem", margin: "auto", textAlign: "center" }}>
         <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username:</Form.Label>
+          <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
+            placeholder="Enter username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Create Username"
           />
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password:</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
           />
         </Form.Group>
+
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email:</Form.Label>
+          <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
             value={email}
+            placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
           />
         </Form.Group>
-        <Form.Group controlId="formBasicBirthday">
-          <Form.Label>Birthday:</Form.Label>
+
+        <Form.Group controlId="formBasicDate">
+          <Form.Label>Date of Birth</Form.Label>
           <Form.Control
             type="date"
             value={birthday}
+            placeholder="12/31/1986"
             onChange={(e) => setBirthday(e.target.value)}
-            placeholder="MM/DD/YYYY"
           />
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleRegister}>
-          Sign Up
+
+        <Button variant="dark" type="submit" onClick={handleSubmit}>
+          Submit
         </Button>
+        <Link to={`/`}>
+          <Button variant="dark link" type="submit">
+            Cancel
+          </Button>
+        </Link>
       </Form>
-    </div>
+    </Container>
   );
 }
-
-RegistrationView.propTypes = {
-  user: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.instanceOf(Date).isRequired,
-  }),
-};
