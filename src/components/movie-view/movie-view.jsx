@@ -3,11 +3,33 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./movie-view.scss";
 
+import axios from "axios";
+
 export class MovieView extends React.Component {
   constructor() {
     super();
 
     this.state = {};
+  }
+
+  addFavorite(movie) {
+    let token = localStorage.getItem("token");
+    let url =
+      "https://myflix89.herokuapp.com/users/" +
+      localStorage.getItem("user") +
+      "/movies/" +
+      movie._id;
+
+    console.log(token);
+
+    axios
+      .post(url, "", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        console.log(response);
+        window.open("/users", "_self");
+      });
   }
 
   render() {
@@ -39,6 +61,9 @@ export class MovieView extends React.Component {
             <Button variant="link">{movie.Director.Name}</Button>
           </Link>
         </div>
+        <Button variant="link" onClick={() => this.addFavorite(movie)}>
+          Add Favorite
+        </Button>
         <Link to={"/"}>
           <Button variant="secondary" type="button" className="back-button">
             Back
