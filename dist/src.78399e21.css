@@ -1,3 +1,19 @@
+.movie-card {
+  display: inline-flex;
+  margin: 20px;
+}
+.movie-view {
+  display: inline-block;
+  text-align: center;
+}
+body {
+  background-color: #e3e3e8;
+}
+
+.login-view {
+  width: 500px;
+  margin: auto;
+}
 .my-flix {
   color: steelblue;
 }
