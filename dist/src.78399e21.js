@@ -51871,19 +51871,19 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, "Register"))) : _react.default.createElement("ul", null, _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, _react.default.createElement(_Button.default, {
-        variant: "link",
-        onClick: function onClick() {
-          return _this3.logOut();
-        }
-      }, "Log out")), _react.default.createElement(_reactRouterDom.Link, {
+        variant: "link"
+      }, "Movies")), _react.default.createElement(_reactRouterDom.Link, {
         to: "/users/"
       }, _react.default.createElement(_Button.default, {
         variant: "link"
       }, "Account")), _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, _react.default.createElement(_Button.default, {
-        variant: "link"
-      }, "Movies"))))), _react.default.createElement(_reactRouterDom.Route, {
+        variant: "link",
+        onClick: function onClick() {
+          return _this3.logOut();
+        }
+      }, "Log out"))))), _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/",
         render: function render() {

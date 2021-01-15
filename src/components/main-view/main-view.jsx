@@ -112,15 +112,15 @@ export class MainView extends React.Component {
             ) : (
               <ul>
                 <Link to={`/`}>
-                  <Button variant="link" onClick={() => this.logOut()}>
-                    Log out
-                  </Button>
+                  <Button variant="link">Movies</Button>
                 </Link>
                 <Link to={`/users/`}>
                   <Button variant="link">Account</Button>
                 </Link>
                 <Link to={`/`}>
-                  <Button variant="link">Movies</Button>
+                  <Button variant="link" onClick={() => this.logOut()}>
+                    Log out
+                  </Button>
                 </Link>
               </ul>
             )}
