@@ -38720,18 +38720,20 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         to: "/directors/".concat(movie.Director.Name)
       }, _react.default.createElement(_Button.default, {
         variant: "link"
-      }, movie.Director.Name))), _react.default.createElement(_Button.default, {
+      }, movie.Director.Name))), _react.default.createElement("div", {
+        className: "movie-button"
+      }, _react.default.createElement(_Button.default, {
         variant: "secondary",
         onClick: function onClick() {
           return _this2.addFavorite(movie);
         }
-      }, "Add Favorite"), _react.default.createElement(_reactRouterDom.Link, {
+      }, "Add Favorite"), " ", _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, _react.default.createElement(_Button.default, {
         variant: "secondary",
         type: "button",
         className: "back-button"
-      }, "Back")));
+      }, "Back"))));
     }
   }]);
 
@@ -51333,7 +51335,9 @@ var GenreView = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var genre = this.props.genre;
       if (!genre) return null;
-      return _react.default.createElement(_Card.default, {
+      return _react.default.createElement("div", {
+        className: "genre-view"
+      }, _react.default.createElement(_Card.default, {
         style: {
           width: "18rem"
         }
@@ -51341,7 +51345,7 @@ var GenreView = /*#__PURE__*/function (_React$Component) {
         to: "/"
       }, _react.default.createElement(_Button.default, {
         variant: "primary"
-      }, "Back")));
+      }, "Back"))));
     }
   }]);
 
@@ -51421,7 +51425,7 @@ var DirectorView = /*#__PURE__*/function (_React$Component) {
         className: "director-view"
       }, _react.default.createElement(_Card.default, {
         style: {
-          width: "18rem"
+          width: "16rem"
         }
       }, _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, director.Name), _react.default.createElement(_Card.default.Text, null, "Birthdate: ", director.Birth), _react.default.createElement(_Card.default.Text, null, "Bio: ", director.Bio)), _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
@@ -52052,7 +52056,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55427" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61372" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

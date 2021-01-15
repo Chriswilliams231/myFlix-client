@@ -66,14 +66,17 @@ export class MovieView extends React.Component {
             <Button variant="link">{movie.Director.Name}</Button>
           </Link>
         </div>
-        <Button variant="secondary" onClick={() => this.addFavorite(movie)}>
-          Add Favorite
-        </Button>
-        <Link to={"/"}>
-          <Button variant="secondary" type="button" className="back-button">
-            Back
-          </Button>
-        </Link>
+        <div className="movie-button">
+          <Button variant="secondary" onClick={() => this.addFavorite(movie)}>
+            Add Favorite
+          </Button>{" "}
+          {/* <br /> */}
+          <Link to={"/"}>
+            <Button variant="secondary" type="button" className="back-button">
+              Back
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }
