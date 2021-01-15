@@ -86,9 +86,11 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Navbar sticky="top" expand="lg" className="mb-2 navbar-styles">
+        <Navbar sticky="top" expand="lg" className=" nav mb-2 navbar-styles">
           <Navbar.Brand className="navbar-brand">
-            <Link to={`/`}>MyFlix</Link>
+            <Link to={`/`} className="nav-link">
+              <h1 className="my-flix">MyFlix</h1>
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"

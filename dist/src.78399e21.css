@@ -1,10 +1,46 @@
+.nav {
+  background-color: #294b93;
+}
+
+.my-flix {
+  font-size: 70px;
+}
 .movie-card {
   display: inline-flex;
+  justify-content: center;
+  align-content: center;
   margin: 20px;
+  margin-top: 50px;
+  margin-left: 60px;
+}
+
+.card-image {
+  height: 396px;
+}
+
+.card-body {
+  height: 324px;
+  width: 264px;
+}
+
+.card-text {
+  height: 160px;
+  width: 224px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+Button {
+  height: 36px;
+  width: 134px;
+  margin-top: 10px;
 }
 .movie-view {
   display: inline-block;
   text-align: center;
+  margin: auto;
+  padding-left: 300px;
 }
 body {
   background-color: #e3e3e8;

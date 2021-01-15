@@ -38562,20 +38562,28 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var movie = this.props.movie;
-      return _react.default.createElement(_Card.default, {
+      return _react.default.createElement("div", {
+        className: "movie-card"
+      }, _react.default.createElement(_Card.default, {
         style: {
           width: "18rem"
-        },
-        className: "movie-card"
+        }
       }, _react.default.createElement(_Card.default.Img, {
         variant: "top",
+        className: "card-image",
         src: movie.ImagePath
-      }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
+      }), _react.default.createElement(_Card.default.Body, {
+        className: "card-body"
+      }, _react.default.createElement(_Card.default.Title, {
+        className: "card-title"
+      }, movie.Title), _react.default.createElement(_Card.default.Text, {
+        className: "card-text"
+      }, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
         to: "/movies/".concat(movie._id)
       }, _react.default.createElement(_Button.default, {
         className: "card-button",
         variant: "secondary"
-      }, "Open"))));
+      }, "Open")))));
     }
   }]);
 
@@ -38681,7 +38689,9 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         className: "movie-view"
       }, _react.default.createElement("img", {
         className: "movie-poster",
-        src: movie.ImagePath
+        src: movie.ImagePath,
+        width: 300,
+        height: 450
       }), _react.default.createElement("div", {
         className: "movie-title"
       }, _react.default.createElement("span", {
@@ -38711,7 +38721,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement(_Button.default, {
         variant: "link"
       }, movie.Director.Name))), _react.default.createElement(_Button.default, {
-        variant: "link",
+        variant: "secondary",
         onClick: function onClick() {
           return _this2.addFavorite(movie);
         }
@@ -51836,12 +51846,15 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Navbar.default, {
         sticky: "top",
         expand: "lg",
-        className: "mb-2 navbar-styles"
+        className: " nav mb-2 navbar-styles"
       }, _react.default.createElement(_Navbar.default.Brand, {
         className: "navbar-brand"
       }, _react.default.createElement(_reactRouterDom.Link, {
-        to: "/"
-      }, "MyFlix")), _react.default.createElement(_Navbar.default.Toggle, {
+        to: "/",
+        className: "nav-link"
+      }, _react.default.createElement("h1", {
+        className: "my-flix"
+      }, "MyFlix"))), _react.default.createElement(_Navbar.default.Toggle, {
         "aria-controls": "basic-navbar-nav",
         className: "bg-light"
       }), _react.default.createElement(_Navbar.default.Collapse, {
@@ -52039,7 +52052,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55238" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55427" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
