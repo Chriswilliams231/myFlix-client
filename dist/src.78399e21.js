@@ -53928,12 +53928,14 @@ var DirectorView = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var director = this.props.director;
       if (!director) return null;
-      return _react.default.createElement("div", {
-        className: "director-view"
-      }, _react.default.createElement(_Card.default, {
+      return _react.default.createElement("div", null, _react.default.createElement(_Card.default, {
         style: {
-          width: "16rem"
-        }
+          width: "16rem",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto"
+        },
+        className: "director-view"
       }, _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, director.Name), _react.default.createElement(_Card.default.Text, null, "Birthdate: ", director.Birth), _react.default.createElement(_Card.default.Text, null, "Bio: ", director.Bio)), _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, _react.default.createElement(_Button.default, {
