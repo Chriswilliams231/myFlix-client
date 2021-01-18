@@ -5,6 +5,7 @@
 .my-flix {
   font-size: 50px;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .movie-card {
   display: inline-flex;
   justify-content: center;
@@ -12,6 +13,10 @@
   margin: 20px;
   margin-top: 50px;
   margin-left: 60px;
+}
+
+.card-title {
+  font-family: Bebas;
 }
 
 .card-image {
@@ -28,13 +33,8 @@
   width: 224px;
   font-size: 16px;
   font-weight: 300;
+  font-family: Roboto;
   line-height: 20px;
-}
-
-Button {
-  height: 36px;
-  width: 134px;
-  margin-top: 10px;
 }
 
 .card-button {
@@ -42,7 +42,11 @@ Button {
   justify-content: center;
   margin: auto;
   background-color: #294b93;
+  height: 36px;
+  width: 134px;
+  margin-top: 10px;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .movie-view {
   display: inline-flex;
   margin: 150px;
@@ -55,11 +59,16 @@ Button {
 
 .movie-info {
   display: inline;
-  padding: 120px;
+  padding: 100px;
+  font-family: Bebas;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 20px;
 }
 
 .value {
-  font-weight: 300;
   font-size: 18px;
 }
 

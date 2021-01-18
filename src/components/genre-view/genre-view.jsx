@@ -19,7 +19,17 @@ export class GenreView extends React.Component {
 
     return (
       <div>
-        <Card style={{ width: "18rem" }} className="genre-view">
+        <Card
+          style={{
+            width: "18rem",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: "100px",
+            textAlign: "center",
+          }}
+          className="genre-view"
+        >
           <Card.Body>
             <Card.Title>{genre.Name}</Card.Title>
             <Card.Text>{genre.Description}</Card.Text>

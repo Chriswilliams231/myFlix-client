@@ -53844,7 +53844,12 @@ var GenreView = /*#__PURE__*/function (_React$Component) {
       if (!genre) return null;
       return _react.default.createElement("div", null, _react.default.createElement(_Card.default, {
         style: {
-          width: "18rem"
+          width: "18rem",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "100px",
+          textAlign: "center"
         },
         className: "genre-view"
       }, _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, genre.Name), _react.default.createElement(_Card.default.Text, null, genre.Description)), _react.default.createElement(_reactRouterDom.Link, {

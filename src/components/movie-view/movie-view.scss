@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 .movie-view {
   display: inline-flex;
   margin: 150px;
@@ -9,10 +11,14 @@
 }
 .movie-info {
   display: inline;
-  padding: 120px;
+  padding: 100px;
+  font-family: Bebas;
+}
+.label {
+  font-weight: 300;
+  font-size: 20px;
 }
 .value {
-  font-weight: 300;
   font-size: 18px;
 }
 .movie-button {
