@@ -3,7 +3,7 @@
 }
 
 .my-flix {
-  font-size: 70px;
+  font-size: 50px;
 }
 .movie-card {
   display: inline-flex;
@@ -36,11 +36,31 @@ Button {
   width: 134px;
   margin-top: 10px;
 }
-.movie-view {
-  display: inline-block;
-  text-align: center;
+
+.card-button {
+  display: flex;
+  justify-content: center;
   margin: auto;
-  padding-left: 200px;
+  background-color: #294b93;
+}
+.movie-view {
+  display: inline-flex;
+  margin: 150px;
+}
+
+.movie-poster {
+  float: left;
+  padding: 10px;
+}
+
+.movie-info {
+  display: inline;
+  padding: 120px;
+}
+
+.value {
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .movie-button {
@@ -48,9 +68,12 @@ Button {
   margin: auto;
 }
 
-.movie-genre {
-  margin-bottom: 10px;
-  margin-top: 20px;
+.color-button {
+  background-color: #294b93;
+}
+
+.back-button {
+  background-color: #294b93;
 }
 body {
   background-color: #e3e3e8;

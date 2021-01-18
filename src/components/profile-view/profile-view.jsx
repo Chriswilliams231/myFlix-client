@@ -146,21 +146,35 @@ export class ProfileView extends React.Component {
                   <h3>Date of Birth:</h3>
                   <Form.Label>{this.state.dob}</Form.Label>
                 </Form.Group>
-                {
-                  <Link to={`/update/${this.state.username}`}>
-                    <Button variant="primary" type="link">
-                      Edit
+                <div className="profile-button">
+                  {
+                    <Link to={`/update/${this.state.username}`}>
+                      <Button
+                        variant="primary"
+                        type="link"
+                        style={{ marginRight: "10px" }}
+                      >
+                        Edit
+                      </Button>
+                    </Link>
+                  }
+                  <Button
+                    variant="danger"
+                    onClick={() => this.handleDelete()}
+                    style={{ marginRight: "10px" }}
+                  >
+                    Delete User
+                  </Button>
+                  <Link to={`/`}>
+                    <Button
+                      variant="light"
+                      type="submit"
+                      style={{ marginRight: "10px" }}
+                    >
+                      Back
                     </Button>
                   </Link>
-                }
-                <Button variant="danger" onClick={() => this.handleDelete()}>
-                  Delete User
-                </Button>
-                <Link to={`/`}>
-                  <Button variant="light" type="submit">
-                    Back
-                  </Button>
-                </Link>
+                </div>
               </Form>
             </Col>
             <Col>
@@ -169,7 +183,7 @@ export class ProfileView extends React.Component {
                 style={{
                   float: "right",
                   textAlign: "center",
-                  width: "28rem",
+                  width: "16rem",
                 }}
               >
                 <h1>Favorite Movies</h1>

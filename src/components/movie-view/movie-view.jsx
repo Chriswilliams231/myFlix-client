@@ -45,37 +45,43 @@ export class MovieView extends React.Component {
           width={300}
           height={450}
         />
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
+        <div className="movie-info">
+          <div className="movie-title">
+            <span className="label">Title: </span>
+            <span className="value">{movie.Title}</span>
+          </div>
+          <div className="movie-description">
+            <span className="label">Description: </span>
+            <span className="value">{movie.Description}</span>
+          </div>
 
-        <div className="movie-genre">
-          <span className="label">Genre: </span>
-          <Link to={`/genres/${movie.Genre.Name}`}>
-            <Button variant="link">{movie.Genre.Name}</Button>
-          </Link>
-        </div>
-        <div className="movie-director">
-          <span className="label">Director: </span>
-          <Link to={`/directors/${movie.Director.Name}`}>
-            <Button variant="link">{movie.Director.Name}</Button>
-          </Link>
-        </div>
-        <div className="movie-button">
-          <Button variant="secondary" onClick={() => this.addFavorite(movie)}>
-            Add Favorite
-          </Button>{" "}
-          {/* <br /> */}
-          <Link to={"/"}>
-            <Button variant="secondary" type="button" className="back-button">
-              Back
-            </Button>
-          </Link>
+          <div className="movie-genre">
+            <span className="label">Genre: </span>
+            <Link to={`/genres/${movie.Genre.Name}`}>
+              <Button variant="link">{movie.Genre.Name}</Button>
+            </Link>
+          </div>
+          <div className="movie-director">
+            <span className="label">Director: </span>
+            <Link to={`/directors/${movie.Director.Name}`}>
+              <Button variant="link">{movie.Director.Name}</Button>
+            </Link>
+          </div>
+          <div className="movie-button">
+            <Button
+              variant="secondary"
+              onClick={() => this.addFavorite(movie)}
+              className="color-button"
+            >
+              Add Favorite
+            </Button>{" "}
+            {/* <br /> */}
+            <Link to={"/"}>
+              <Button variant="secondary" type="button" className="back-button">
+                Back
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     );

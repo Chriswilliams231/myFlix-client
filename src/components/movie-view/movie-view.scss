@@ -1,15 +1,27 @@
 .movie-view {
-  display: inline-block;
-  text-align: center;
-  margin: auto;
-  padding-left: 200px;
+  display: inline-flex;
+  margin: 150px;
 }
 
+.movie-poster {
+  float: left;
+  padding: 10px;
+}
+.movie-info {
+  display: inline;
+  padding: 120px;
+}
+.value {
+  font-weight: 300;
+  font-size: 18px;
+}
 .movie-button {
   padding: 10px;
   margin: auto;
 }
-.movie-genre {
-  margin-bottom: 10px;
-  margin-top: 20px;
+.color-button {
+  background-color: #294b93;
+}
+.back-button {
+  background-color: #294b93;
 }

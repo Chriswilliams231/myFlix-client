@@ -18,14 +18,16 @@ export class GenreView extends React.Component {
     if (!genre) return null;
 
     return (
-      <div className="genre-view">
-        <Card style={{ width: "18rem" }}>
+      <div>
+        <Card style={{ width: "18rem" }} className="genre-view">
           <Card.Body>
             <Card.Title>{genre.Name}</Card.Title>
             <Card.Text>{genre.Description}</Card.Text>
           </Card.Body>
           <Link to={"/"}>
-            <Button variant="primary">Back</Button>
+            <Button variant="secondary" className="back-button">
+              Back
+            </Button>
           </Link>
         </Card>
       </div>
