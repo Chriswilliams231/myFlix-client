@@ -1,8 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 body {
   background-color: #e3e3e8;
+  font-family: Bebas;
 }
 
 .login-view {
   width: 500px;
   margin: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-button {
+  margin-left: 10px;
+  background-color: #294b93;
 }

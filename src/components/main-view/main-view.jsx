@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import "./main-view.scss";
-
+import { UpdateView } from "../profile-upate/profile-update";
 import MoviesList from "../movie-list/movie-list";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
@@ -89,7 +89,7 @@ export class MainView extends React.Component {
         <Navbar sticky="top" expand="lg" className=" nav mb-2 navbar-styles">
           <Navbar.Brand className="navbar-brand">
             <Link to={`/`} className="nav-link">
-              <h1 className="my-flix">MyFlix</h1>
+              <h1 className="my-flix">myFlix</h1>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle
@@ -103,7 +103,7 @@ export class MainView extends React.Component {
             {!user ? (
               <ul>
                 <Link to={`/`}>
-                  <Button variant="link">login</Button>
+                  <Button variant="link">Login</Button>
                 </Link>
                 <Link to={`/register`}>
                   <Button variant="link">Register</Button>
@@ -155,6 +155,7 @@ export class MainView extends React.Component {
                   movies.find((m) => m.Director.Name === match.params.name)
                     .Director
                 }
+                movies={movies}
               />
             );
           }}
@@ -168,6 +169,7 @@ export class MainView extends React.Component {
                 genre={
                   movies.find((m) => m.Genre.Name === match.params.name).Genre
                 }
+                movies={movies}
               />
             );
           }}
@@ -178,8 +180,13 @@ export class MainView extends React.Component {
             <ProfileView movies={movies} logOutFunc={() => this.logOut()} />
           )}
         />
-        {/* <Route path="/Update/:name" render={() => <UpdateView />} />
-        <Route path="/contact" component={Contact} />
+        <Route
+          path="/update/:userId"
+          render={() => {
+            return <UpdateView />;
+          }}
+        />
+        {/* <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} /> */}
       </Router>
     );

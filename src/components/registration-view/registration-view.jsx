@@ -39,6 +39,7 @@ export function RegistrationView() {
     <Container>
       <br />
       <br />
+      <h1 className="reg-heading">Welcome to myFlix!</h1>
       <Form style={{ width: "32rem", margin: "auto", textAlign: "center" }}>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
@@ -80,11 +81,16 @@ export function RegistrationView() {
           />
         </Form.Group>
 
-        <Button variant="dark" type="submit" onClick={handleSubmit}>
+        <Button
+          variant="secondary"
+          type="submit"
+          onClick={handleSubmit}
+          className="reg-button"
+        >
           Submit
         </Button>
         <Link to={`/`}>
-          <Button variant="dark link" type="submit">
+          <Button variant="secondary" type="submit" className="reg-button">
             Cancel
           </Button>
         </Link>

@@ -43,7 +43,7 @@ export class MovieView extends React.Component {
           className="movie-poster"
           src={movie.ImagePath}
           width={300}
-          height={450}
+          height={400}
         />
         <div className="movie-info">
           <div className="movie-title">

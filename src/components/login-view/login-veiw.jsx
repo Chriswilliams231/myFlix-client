@@ -32,6 +32,8 @@ export function LoginView(props) {
 
   return (
     <div className="login-view">
+      <h1>Welcome to myFlix!</h1>
+      <p>Please log in or register</p>
       <Form className="login-form">
         <Form.Group controlId="formUsername">
           <Form.Label>Username</Form.Label>
@@ -52,11 +54,16 @@ export function LoginView(props) {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="secondary" type="button" onClick={handleSubmit}>
+        <Button
+          variant="secondary"
+          type="button"
+          onClick={handleSubmit}
+          className="login-button"
+        >
           Login
         </Button>
         <Link to={"/register"}>
-          <Button variant="secondary" type="button">
+          <Button variant="secondary" type="button" className="login-button">
             Register
           </Button>
         </Link>

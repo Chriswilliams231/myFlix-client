@@ -153,6 +153,7 @@ export class ProfileView extends React.Component {
                         variant="primary"
                         type="link"
                         style={{ marginRight: "10px" }}
+                        className="profile-button"
                       >
                         Edit
                       </Button>
@@ -170,6 +171,7 @@ export class ProfileView extends React.Component {
                       variant="light"
                       type="submit"
                       style={{ marginRight: "10px" }}
+                      className="profile-button"
                     >
                       Back
                     </Button>
@@ -197,7 +199,10 @@ export class ProfileView extends React.Component {
                           </Link>
                         </Card.Body>
                       </Card>
-                      <Button onClick={() => this.removeFavorite(movie)}>
+                      <Button
+                        onClick={() => this.removeFavorite(movie)}
+                        className="profile-button"
+                      >
                         Remove
                       </Button>
                     </div>

@@ -1,9 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .nav {
   background-color: #294b93;
+  height: 70px;
 }
 
 .my-flix {
   font-size: 50px;
+  font-family: Bebas;
+}
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.update-form {
+  margin: 100px;
+}
+
+.account-update {
+  text-align: center;
+  font-family: Bebas;
 }
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .movie-card {
@@ -54,7 +66,6 @@
 
 .movie-poster {
   float: left;
-  padding: 10px;
 }
 
 .movie-info {
@@ -64,7 +75,7 @@
 }
 
 .label {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
 }
 
@@ -84,13 +95,53 @@
 .back-button {
   background-color: #294b93;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.reg-heading {
+  font-family: Bebas;
+  text-align: center;
+}
+
+.reg-button {
+  margin-right: 10px;
+  background-color: #294b93;
+}
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 body {
   background-color: #e3e3e8;
+  font-family: Bebas;
 }
 
 .login-view {
   width: 500px;
   margin: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-button {
+  margin-left: 10px;
+  background-color: #294b93;
+}
+.director-view {
+  width: 18rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+  height: 30rem;
+}
+
+.birthdate {
+  margin-top: 120px;
+}
+
+.director-button {
+  margin-top: 50px;
+}
+
+.director-fav {
+  height: 30px;
 }
 .my-flix {
   color: steelblue;
