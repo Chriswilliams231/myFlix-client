@@ -114,7 +114,7 @@ export class MainView extends React.Component {
                 <Link to={`/`}>
                   <Button variant="link">Movies</Button>
                 </Link>
-                <Link to={`/users/`}>
+                <Link to={`/users/${user}`}>
                   <Button variant="link">Account</Button>
                 </Link>
                 <Link to={`/`}>
@@ -175,7 +175,7 @@ export class MainView extends React.Component {
           }}
         />
         <Route
-          path="/users/"
+          path="/users/:userId"
           render={() => (
             <ProfileView movies={movies} logOutFunc={() => this.logOut()} />
           )}
