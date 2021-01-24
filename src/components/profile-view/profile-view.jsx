@@ -91,7 +91,7 @@ export class ProfileView extends React.Component {
     let url =
       "https://myflix89.herokuapp.com/users/" +
       localStorage.getItem("user") +
-      "/Movies/" +
+      "/movies/" +
       movie._id;
     axios
       .delete(url, {
@@ -192,10 +192,23 @@ export class ProfileView extends React.Component {
                 {favoriteMovieList.map((movie) => {
                   return (
                     <div key={movie._id}>
-                      <Card>
-                        <Card.Body>
+                      <Card style={{ width: "13rem" }} className="movie-card">
+                        <Card.Img
+                          variant="top"
+                          className="card-image"
+                          src={movie.ImagePath}
+                        />
+                        <Card.Body className="card-body">
+                          <Card.Title className="card-title">
+                            {movie.Title}
+                          </Card.Title>
+                          <Card.Text className="card-text">
+                            {movie.Description}
+                          </Card.Text>
                           <Link to={`/movies/${movie._id}`}>
-                            <Card.Title>{movie.Title}</Card.Title>
+                            <Button className="card-button" variant="secondary">
+                              Open
+                            </Button>
                           </Link>
                         </Card.Body>
                       </Card>

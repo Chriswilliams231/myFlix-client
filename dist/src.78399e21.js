@@ -42411,7 +42411,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         }
       }).then(function (response) {
         console.log(response);
-        window.open("/users", "_self");
+        window.open("/movies/" + movie._id, "_self");
       });
     }
   }, {
@@ -54388,7 +54388,7 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
 
       var token = localStorage.getItem("token");
 
-      var url = "https://myflix89.herokuapp.com/users/" + localStorage.getItem("user") + "/Movies/" + movie._id;
+      var url = "https://myflix89.herokuapp.com/users/" + localStorage.getItem("user") + "/movies/" + movie._id;
 
       _axios.default.delete(url, {
         headers: {
@@ -54489,9 +54489,27 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement("h1", null, "Favorite Movies"), favoriteMovieList.map(function (movie) {
         return _react.default.createElement("div", {
           key: movie._id
-        }, _react.default.createElement(_Card.default, null, _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_reactRouterDom.Link, {
+        }, _react.default.createElement(_Card.default, {
+          style: {
+            width: "13rem"
+          },
+          className: "movie-card"
+        }, _react.default.createElement(_Card.default.Img, {
+          variant: "top",
+          className: "card-image",
+          src: movie.ImagePath
+        }), _react.default.createElement(_Card.default.Body, {
+          className: "card-body"
+        }, _react.default.createElement(_Card.default.Title, {
+          className: "card-title"
+        }, movie.Title), _react.default.createElement(_Card.default.Text, {
+          className: "card-text"
+        }, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
           to: "/movies/".concat(movie._id)
-        }, _react.default.createElement(_Card.default.Title, null, movie.Title)))), _react.default.createElement(_Button.default, {
+        }, _react.default.createElement(_Button.default, {
+          className: "card-button",
+          variant: "secondary"
+        }, "Open")))), _react.default.createElement(_Button.default, {
           onClick: function onClick() {
             return _this4.removeFavorite(movie);
           },
@@ -54689,7 +54707,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, _react.default.createElement(_Button.default, {
         variant: "link"
       }, "Movies")), _react.default.createElement(_reactRouterDom.Link, {
-        to: "/users/"
+        to: "/users/".concat(user)
       }, _react.default.createElement(_Button.default, {
         variant: "link"
       }, "Account")), _react.default.createElement(_reactRouterDom.Link, {
@@ -54756,7 +54774,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           });
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
-        path: "/users/",
+        path: "/users/:userId",
         render: function render() {
           return _react.default.createElement(_profileView.ProfileView, {
             movies: movies,
@@ -54940,7 +54958,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51261" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51535" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
