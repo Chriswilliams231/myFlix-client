@@ -42411,7 +42411,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         }
       }).then(function (response) {
         console.log(response);
-        window.open("/movies/" + movie._id, "_self");
+        window.open("/users/" + localStorage.getItem("user"), "_self");
       });
     }
   }, {
