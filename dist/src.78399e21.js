@@ -53948,6 +53948,7 @@ function LoginView(props) {
       var data = response.data;
       props.onLoggedIn(data);
     }).catch(function (e) {
+      alert("no such user");
       console.log("no such user");
     });
   };
@@ -54399,25 +54400,39 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
 
         _this3.componentDidMount();
       });
-    }
+    } // handleDelete() {
+    //   if (!confirm("Are you sure?")) return;
+    //   let token = localStorage.getItem("token");
+    //   let url =
+    //     "https://myflix89.herokuapp.com/users/" + localStorage.getItem("user");
+    //   axios
+    //     .delete(url, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     })
+    //     .then((response) => console.log(response));
+    //   localStorage.removeItem("token");
+    //   // localStorage.removeItem("user");
+    //   window.open("/", "_self");
+    // }
+
   }, {
     key: "handleDelete",
     value: function handleDelete() {
-      if (!confirm("Are you sure?")) return;
       var token = localStorage.getItem("token");
-      var url = "https://myflix89.herokuapp.com/users/" + this.state.username;
+      var user = localStorage.getItem("user");
 
-      _axios.default.delete(url, {
+      _axios.default.delete("https://myflix89.herokuapp.com/users/".concat(user), {
         headers: {
           Authorization: "Bearer ".concat(token)
         }
-      }).then(function (response) {
-        return console.log(response);
+      }).then(function () {
+        alert(user + " has been deleted");
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.pathname = "/";
+      }).catch(function (error) {
+        console.log(error);
       });
-
-      localStorage.removeItem("token"); // localStorage.removeItem("user");
-
-      window.open("/", "_self");
     }
   }, {
     key: "render",
@@ -54958,7 +54973,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51535" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58577" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

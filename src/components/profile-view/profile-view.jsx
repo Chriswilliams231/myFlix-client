@@ -103,19 +103,37 @@ export class ProfileView extends React.Component {
       });
   }
 
+  // handleDelete() {
+  //   if (!confirm("Are you sure?")) return;
+  //   let token = localStorage.getItem("token");
+  //   let url =
+  //     "https://myflix89.herokuapp.com/users/" + localStorage.getItem("user");
+  //   axios
+  //     .delete(url, {
+  //       headers: { Authorization: `Bearer ${token}` },
+  //     })
+  //     .then((response) => console.log(response));
+
+  //   localStorage.removeItem("token");
+  //   // localStorage.removeItem("user");
+  //   window.open("/", "_self");
+  // }
   handleDelete() {
-    if (!confirm("Are you sure?")) return;
     let token = localStorage.getItem("token");
-    let url = "https://myflix89.herokuapp.com/users/" + this.state.username;
+    let user = localStorage.getItem("user");
     axios
-      .delete(url, {
+      .delete(`https://myflix89.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((response) => console.log(response));
-
-    localStorage.removeItem("token");
-    // localStorage.removeItem("user");
-    window.open("/", "_self");
+      .then(() => {
+        alert(user + " has been deleted");
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.pathname = "/";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
